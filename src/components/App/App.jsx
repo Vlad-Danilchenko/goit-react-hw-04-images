@@ -22,7 +22,9 @@ export const App = () => {
     if (searchQuery === '') {
       return;
     }
-    setImageArray([]);
+    if (page === 1) {
+      setImageArray([]);
+    }
     setLoading(true);
     fetch(
       `https://pixabay.com/api/?q=${searchQuery}&page=${page}&key=${PERSONAL_KEY}&image_type=photo&orientation=horizontal&per_page=12`
